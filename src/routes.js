@@ -3,9 +3,12 @@ const routes = express.Router();
 
 const ProductController = require('./controllers/ProductController');
 
-// Primeira rota
+// Rotas
 routes.get('/products', ProductController.index);
+routes.get('/product/:id', ProductController.show);
 routes.post('/products', ProductController.store);
+routes.put('/product/:id', ProductController.update);
+routes.delete('/product/:id', ProductController.destroy);
 
 //exportando para utilizar dentro do server.js
 module.exports = routes;
